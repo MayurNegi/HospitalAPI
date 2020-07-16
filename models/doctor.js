@@ -14,14 +14,6 @@ const doctorSchema = new Schema({
     type: String,
     required: true,
   },
-  mobile: {
-    type: Number,
-    required: true,
-  },
-  registration_no: {
-    type: String,
-    required: true,
-  },
 });
 
 const Doctor = mongoose.model("Doctor", doctorSchema);
