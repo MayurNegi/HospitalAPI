@@ -7,7 +7,7 @@ module.exports.doctorRegistration = async function (req, res) {
 
     // if password and confirm pasword is not same
     if (req.body.password != req.body.confirm) {
-      console.log("conf pass");
+      console.log("conf pass", req.body.password, req.body.confirm);
       return res.status(422).json({
         message: "password and confirm password doesnt match",
       });
@@ -16,6 +16,7 @@ module.exports.doctorRegistration = async function (req, res) {
     let doctor = await Doctor.findOne({ email: req.body.email });
     if (!doctor) {
       // create doctor if not already exist
+      console.log(req.body);
       console.log("!doc");
       await Doctor.create(req.body);
 
