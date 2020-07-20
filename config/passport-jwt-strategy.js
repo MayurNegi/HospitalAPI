@@ -11,7 +11,7 @@ let opts = {
 
 passport.use(
   new JWTStrategy(opts, function (jwt_payload, done) {
-    Doctor.findOne(jwt_payload._id, function (err, doctor) {
+    Doctor.findById(jwt_payload._id, function (err, doctor) {
       if (err) {
         console.log("error in finding doctor from JWT", err);
         return;
