@@ -4,12 +4,12 @@ const Schema = mongoose.Schema;
 const reportSchema = new Schema(
   {
     doctor: {
-      type: String,
-      required: true,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Doctor",
     },
     patient: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Doctor",
+      ref: "Patient",
     },
     status: {
       type: String,

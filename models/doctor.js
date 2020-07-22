@@ -6,6 +6,10 @@ const doctorSchema = new Schema({
     type: String,
     required: true,
   },
+  registration_no: {
+    type: String,
+    required: true,
+  },
   email: {
     type: String,
     required: true,
